@@ -6,7 +6,6 @@ import (
 	"time"
 
 	"github.com/ashwin2125/go-mathify/pkg/arithmetic"
-	"github.com/ashwin2125/go-mathify/pkg/exponential"
 )
 
 // runBenchmark runs the provided function 'fn' for 'numIterations' times,
@@ -53,15 +52,15 @@ func main() {
 
 	// Run benchmarks for arithmetic.Add
 	runBenchmark("Arithmetic Add", func() error {
-		_, err := arithmetic.Add(5, 3)
-		return err
+		_ = arithmetic.Add(5, 3)
+		return nil
 	})
 
 	// Run benchmarks for exponential.SquareRoot
-	runBenchmark("Exponential SquareRoot", func() error {
-		_, err := exponential.SquareRoot(25.0)
-		return err
-	})
+	// runBenchmark("Exponential SquareRoot", func() error {
+	// 	_, err := exponential.SquareRoot(25.0)
+	// 	return err
+	// })
 
 	fmt.Println("Benchmarks completed.")
 }
