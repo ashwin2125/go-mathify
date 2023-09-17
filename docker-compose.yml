@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  go-mathify:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: final
+      args:
+        VERSION: "development"
+        BUILD_DATE: ${BUILD_DATE:-$(date -u +'%Y-%m-%dT%H:%M:%SZ')}
+        VCS_URL: "https://github.com/ashwin2125/go-mathify"
+    environment:
+      - GO_ENV=development
+    volumes:
+      - ./pkg:/src/app/pkg
+    networks:
+      - go-mathify-net
+
+networks:
+  go-mathify-net:
+    driver: bridge
