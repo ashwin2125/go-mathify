@@ -41,6 +41,6 @@ jobs:
     
     - name: Build and Push Docker Image
       run: |
-        docker build -t ghcr.io/${{ github.repository }}/go-mathify:latest .
-        docker push ghcr.io/${{ github.repository }}/go-mathify:latest
+        docker build -t ghcr.io/${{ github.repository }}:latest .
+        docker push ghcr.io/${{ github.repository }}:latest
 
