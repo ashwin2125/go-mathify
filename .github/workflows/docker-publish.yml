@@ -26,6 +26,7 @@ jobs:
       
     - name: Build
       run: go build .
+      working-directory: ./cmd/go-mathify
 
   docker:
     runs-on: ubuntu-latest
