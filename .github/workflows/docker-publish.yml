@@ -41,8 +41,9 @@ jobs:
     # Tag the image with the current datetime
     - name: Tag Docker Image with Datetime
       run: |
-        DATETIME_TAG=$(date +'%Y-%m-%d|%I:%M%p')
+        DATETIME_TAG=$(date +'%Y-%m-%d-%I-%M%p')
         docker tag ghcr.io/${{ github.repository }}:latest ghcr.io/${{ github.repository }}:$DATETIME_TAG
+
 
     # Push all tags
     - name: Push Docker Image
