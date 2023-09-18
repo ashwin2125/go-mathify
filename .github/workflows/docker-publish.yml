@@ -43,3 +43,4 @@ jobs:
       run: |
         docker build -t ghcr.io/${{ github.repository }}/go-mathify:latest .
         docker push ghcr.io/${{ github.repository }}/go-mathify:latest
+
